@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 16:28:02 by ratavare          #+#    #+#             */
-/*   Updated: 2022/10/31 12:25:50 by ratavare         ###   ########.fr       */
+/*   Created: 2022/10/31 12:33:41 by ratavare          #+#    #+#             */
+/*   Updated: 2022/10/31 12:57:10 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if ((dest == NULL) && (src == NULL))
-		return (NULL);
-	while (n > i)
+	while (s[i] != c)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		if (s[i] == '\0')
+			return (NULL);
 		i++;
 	}
-	return (dest);
+	return ((char *)s + i);
 }
-
-/*int	main(void)
-{
-	char str[] = "abcdef";
-	
-	puts(str);
-	ft_memcpy(str +2, str +1, 5);
-	puts(str);
-}*/

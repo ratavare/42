@@ -6,7 +6,7 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:31:34 by ratavare          #+#    #+#             */
-/*   Updated: 2022/10/28 16:53:29 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/10/31 12:31:06 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+/*int	main(void)
+{
+	char str[] = "abcdef";
+	
+	puts(str);
+	ft_memmove(str +2, str +1, 5);
+	puts(str);
+}*/

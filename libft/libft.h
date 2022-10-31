@@ -17,5 +17,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *str, int ch, size_t len);
 size_t	ft_strlen(char *str);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
+char	*ft_strchr(const char *s, int c);
 
 #endif

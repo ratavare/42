@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 16:28:02 by ratavare          #+#    #+#             */
-/*   Updated: 2022/10/31 12:25:50 by ratavare         ###   ########.fr       */
+/*   Created: 2022/10/31 12:20:20 by ratavare          #+#    #+#             */
+/*   Updated: 2022/10/31 12:21:13 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_tolower(int c)
 {
-	size_t	i;
-
-	i = 0;
-	if ((dest == NULL) && (src == NULL))
-		return (NULL);
-	while (n > i)
-	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dest);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }
-
-/*int	main(void)
-{
-	char str[] = "abcdef";
-	
-	puts(str);
-	ft_memcpy(str +2, str +1, 5);
-	puts(str);
-}*/

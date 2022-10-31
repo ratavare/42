@@ -6,7 +6,7 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:57:11 by ratavare          #+#    #+#             */
-/*   Updated: 2022/10/31 10:12:53 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:21:52 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,21 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	i;
+	size_t	j;
+
 	if (size == 0)
 		return (0);
-	
+	if (ft_strlen(dst) >= size)
+		return (size + ft_strlen((char *)src));
+	i = 0;
+	j = (ft_strlen(dst));
+	while (src[i] != '\0' && j + 1 < size)
+	{
+		dst[j] = ((char *)src)[i];
+		i++;
+		j++;
+	}
+	dst[j] = '\0';
+	return (ft_strlen(dst)+ ft_strlen((char *)src + i));
 }
