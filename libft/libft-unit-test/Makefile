@@ -6,7 +6,7 @@
 #    By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/04 19:22:36 by alelievr          #+#    #+#              #
-#    Updated: 2022/10/27 18:02:49 by ratavare         ###   ########.fr        #
+#    Updated: 2022/11/03 13:17:58 by ratavare         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 #################
 
 #	Libft Makefile path
-LIBFTDIR	=	"/nfs/homes/ratavare/Documents/libft"
+LIBFTDIR	=	"/nfs/homes/ratavare/Documents/42/libft"
 
 #	Sources
 SRCDIR		=	./
