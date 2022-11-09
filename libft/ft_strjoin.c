@@ -6,7 +6,7 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:36:34 by ratavare          #+#    #+#             */
-/*   Updated: 2022/11/02 17:47:50 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:50:56 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (NULL);
-	str = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2));
+	str = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
 	if (!str)
 		return (NULL);
 	while (s1[i])

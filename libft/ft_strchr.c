@@ -6,7 +6,7 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:33:41 by ratavare          #+#    #+#             */
-/*   Updated: 2022/10/31 12:57:10 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:05:33 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	char	*str;
 
-	i = 0;
-	while (s[i] != c)
+	str = (char *)s;
+	while (*str != (char)c)
 	{
-		if (s[i] == '\0')
+		if (*str == '\0')
 			return (NULL);
-		i++;
+		str++;
 	}
-	return ((char *)s + i);
+	return (str);
 }

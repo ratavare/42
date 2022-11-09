@@ -6,7 +6,7 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:06:31 by ratavare          #+#    #+#             */
-/*   Updated: 2022/11/07 14:38:04 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:18:47 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483647 - 1)
+	if (n == -2147483648)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(214748364, fd);
-		write(fd, "8", 1);
+		write(fd, "2147483648", 10);
+		return ;
 	}
 	if (n < 0)
 	{
