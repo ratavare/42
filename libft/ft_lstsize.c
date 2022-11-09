@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 13:39:46 by ratavare          #+#    #+#             */
-/*   Updated: 2022/11/08 13:27:35 by ratavare         ###   ########.fr       */
+/*   Created: 2022/11/09 14:24:17 by ratavare          #+#    #+#             */
+/*   Updated: 2022/11/09 14:29:48 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	res;
-	size_t	sinal;
 	int		i;
+	t_list	*temp;
 
-	res = 0;
-	sinal = 1;
-	i = 0;
-	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	if (!lst)
+		return (0);
+	i = 1;
+	temp = lst;
+	while (temp->next != NULL)
 	{
-		if (nptr[i] == '-')
-		{
-			sinal *= -1;
-		}
+		temp = temp->next;
 		i++;
 	}
-	while ((nptr[i] && nptr[i] >= '0' && nptr[i] <= '9'))
-	{
-		res = 10 * res + nptr[i] - '0';
-		i++;
-	}
-	return ((int)(res * sinal));
+	return (i);
 }

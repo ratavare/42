@@ -1,38 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 17:56:02 by ratavare          #+#    #+#             */
-/*   Updated: 2022/11/08 17:45:44 by ratavare         ###   ########.fr       */
+/*   Created: 2022/11/08 13:37:07 by ratavare          #+#    #+#             */
+/*   Updated: 2022/11/08 17:53:24 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+int	ft_nlen(long n)
 {
-	size_t	i;
-	size_t	len;
-	char	*str;
+	int	i;
+	int	sinal;
 
 	i = 0;
-	if (!s1)
-		return (NULL);
-	if (!set)
-		return (ft_strdup(s1));
-	while (s1[i] && ft_strchr(set, s1[i]))
+	sinal = -1;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		n *= sinal;
 		i++;
-	len = ft_strlen((char *)s1 + i);
-	if (len)
-		while (ft_strchr(set, s1[len + i - 1]))
-			len--;
-	str = malloc(len + 1);
+	}
+	while (n > 0)
+	{
+			n /= 10;
+			i++;
+	}
+	return (i);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		i;
+	long	nb;
+
+	nb = n;
+	i = ft_nlen(n);
+	str = malloc(sizeof(char) * i + 1);
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s1 + i, len + 1);
-	str[len] = '\0';
+	str[i--] = '\0';
+	if (nb == 0)
+		str[0] = 48;
+	if (nb < 0)
+	{
+		str[0] = '-';
+		nb *= -1;
+	}
+	while (nb > 0)
+	{
+		str[i--] = 48 + (nb % 10);
+		nb /= 10;
+	}
 	return (str);
 }

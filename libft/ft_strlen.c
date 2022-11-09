@@ -6,13 +6,13 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:07:10 by ratavare          #+#    #+#             */
-/*   Updated: 2022/11/04 17:00:11 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/11/09 15:06:48 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
