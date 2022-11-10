@@ -6,7 +6,7 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:40:01 by ratavare          #+#    #+#             */
-/*   Updated: 2022/11/10 13:16:11 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:40:51 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,12 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	split[j] = '\0';
+	split[j] = NULL;
 	return (split);
 }
+
+/*int	main(void)
+{
+	ft_split("ola!sou!rafa", '!');
+	printf("%s", ft_split("ola!sou!rafa", '!')[0]);
+}*/
