@@ -6,7 +6,7 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:34:39 by ratavare          #+#    #+#             */
-/*   Updated: 2022/11/09 14:50:23 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:26:27 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!(*lst))
+	if (!*lst)
 	{
-		(*lst) = new;
+		*lst = new;
 		return ;
 	}
 	ft_lstlast(*lst)->next = new;
-	new->next = NULL;
 }

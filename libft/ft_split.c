@@ -6,7 +6,7 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:40:01 by ratavare          #+#    #+#             */
-/*   Updated: 2022/11/04 18:10:06 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:16:11 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	wordcount(const char *str, char c)
 				str++;
 			i++;
 		}
-		while (*str == c)
+		while (*str == c && *str)
 			str++;
 	}
 	return (i);
@@ -38,7 +38,7 @@ static char	*worddup(const char *str, int start, int end)
 
 	i = 0;
 	word = malloc((end - start + 1) * sizeof(char));
-	while (start < end)
+	while (start < end && *str)
 	{
 		word[i] = str[start];
 		i++;
@@ -74,7 +74,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	index = -1;
-	while (i <= ft_strlen((char *)s))
+	while (i <= ft_strlen((char *)s) && *s)
 	{
 		if (s[i] != c && index < 0)
 			index = i;
