@@ -6,7 +6,7 @@
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 17:03:33 by ratavare          #+#    #+#             */
-/*   Updated: 2022/11/23 17:18:52 by ratavare         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:31:12 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	*str;
 
+	if (!s)
+		return (NULL);
 	str = (char *)s;
 	while (*str != (char)c)
 	{
@@ -61,6 +63,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	str[i] = '\0';
+	free((char *)s1);
 	return (str);
 }
 
@@ -106,15 +109,14 @@ char	*ft_whatsleft(char *stash)
 		free (stash);
 		return (NULL);
 	}
-	str = malloc(sizeof(char) * (ft_strlen(stash) - 1 + 1));
+	str = malloc(sizeof(char) * (ft_strlen(stash) - i + 1));
+	i++;
 	if (!str)
 		return (NULL);
 	j = 0;
 	while (stash[i])
 	{
-		str[j] = stash[i];
-		i++;
-		j++;
+		str[j++] = stash[i++];
 	}
 	str[j] = '\0';
 	free (stash);
