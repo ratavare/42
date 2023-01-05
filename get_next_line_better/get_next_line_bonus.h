@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ratavare <ratavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 14:24:17 by ratavare          #+#    #+#             */
-/*   Updated: 2022/12/08 16:07:05 by ratavare         ###   ########.fr       */
+/*   Created: 2023/01/05 14:32:00 by ratavare          #+#    #+#             */
+/*   Updated: 2023/01/05 16:16:09 by ratavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-int	ft_lstsize(t_list *lst)
-{
-	int		i;
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
 
-	if (!lst)
-		return (0);
-	i = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_strjoin(char *line, char *buffer);
+int		ft_strlen(const char *str);
+char	*ft_freebuffer(char *buffer, int fd);
+
+#endif
